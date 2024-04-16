@@ -1,0 +1,32 @@
+<h1 class="mt-5 mb-4">Products</h1>
+    
+    <table class="table table-bordered table-backround">
+        <thead>
+            <tr>
+                
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product=>{%>
+              <tr>
+                <td><%=product.id%></td>
+                <td><%=product.name%></td>
+                <td><%=product.desc%></td>
+                <td><%=product.price%></td>
+                <td><img src=<%=product.imageUrl%>></td>
+                <td>
+                  <a href="/update-product/<%=product.id%>" class="btn btn-warning">Update</a>
+                  <a href="/delete-product/<%=product.id%>" class="btn btn-warning">Delete</a>
+                </td>
+            </tr>
+           
+            <%})%>
+            
+        </tbody>
+    </table>
